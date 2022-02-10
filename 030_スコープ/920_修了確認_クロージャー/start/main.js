@@ -15,3 +15,46 @@
  * ※前に行った計算結果をもとに四則演算を行います。
  * ※四則演算は"+","-","*","/"を数値ではさんで計算を行います。
  */
+
+let createTimer = function () {
+    let time = 10;
+
+    return function timeDown() {
+        time -= 1;
+        console.log(time);
+    }
+}
+
+let timer = createTimer();
+timer();
+timer();
+timer();
+
+
+window.onload = function () {
+    let Hello = function (_name, _major) {
+        let name = _name;
+        this.major = _major;
+        let getName = function () {
+            return name;
+        }
+        this.setName = function (_name) {
+            name = 'Mr.' + _name;
+        }
+        this.getMajor = function () {
+            return this.major;
+        }
+        this.say = function () {
+            console.log('Hello! ' + getName() + 'I know you are great about ' + this.major + '!');
+        }
+    }
+}
+
+let ins = new Hello('Jobs', 'Design');
+ins.say();
+ins.name = 'Tim';
+ins.major = 'Computer Science';
+ins.say();
+ins.setName('Tim');
+ins.major = 'Marketing';
+ins.say();

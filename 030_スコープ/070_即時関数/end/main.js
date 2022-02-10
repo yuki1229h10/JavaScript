@@ -4,11 +4,11 @@ function a() {
 
 a();
 
-let b = function() {
+let b = function () {
 	console.log('called');
 }();
 
-let c = (function() {
+let c = (function () {
 
 	console.log('called');
 
@@ -21,7 +21,7 @@ let c = (function() {
 	function publicFn() {
 		console.log('publicFn is called: ' + privateVal++);
 	}
-	
+
 	return {
 		publicVal,
 		publicFn

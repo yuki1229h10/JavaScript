@@ -7,8 +7,8 @@
  * ※if文は削除してはいけません。
  */
 function fn() {
-    if(true) {
-        let a = 'fn called';
+    if (true) {
+        var a = 'fn called';
     }
     return a; // ReferenceError: a is not defined
 }
@@ -25,8 +25,8 @@ var val = 'val1';
 function fn2() {
     console.log(val); // 期待値->'val1'
 
-    if(true) {
-        var val = 'val2';
+    if (true) {
+        const val = 'val2';
         console.log(val); // 期待値->'val2'
     }
 
@@ -46,3 +46,59 @@ fn2();
  * increment(); // 期待値->4
  */
 
+let num = 0;
+function increment(num) {
+    num = num + num;
+
+    return num;
+}
+
+increment(1);
+increment(1);
+increment(1);
+increment(1);
+
+/**
+ * 1
+ */
+function fn() {
+    let a;
+    if (true) {
+        a = 'fn called';
+    }
+    return a;
+}
+
+const result2 = fn();
+console.log(result2);
+
+/**
+ * 2
+ */
+var val = 'val1';
+function fn2() {
+    console.log(val);
+
+    if (true) {
+        let val = 'val2';
+        console.log(val);
+    }
+
+    console.log(val);
+}
+fn2();
+
+/**
+ * 3
+ */
+{
+    let num = 0;
+    function increment() {
+        num = num + 1;
+        console.log(num);
+    }
+}
+increment();
+increment();
+increment();
+increment();

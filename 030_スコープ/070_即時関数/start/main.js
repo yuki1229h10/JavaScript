@@ -35,3 +35,20 @@ c.publicFn();
 c.privateFn();
 
 console.log(c.publicVal);
+
+
+(function (g) {
+    function hello(name) {
+        console.log(`俺の名前は${name}`);
+    }
+
+    hello('太朗');
+}(this));
+
+(function (g) {
+    function hello(name) {
+        console.log(`俺の名前は${name}`);
+    }
+
+    hello('エレン');
+}(this));

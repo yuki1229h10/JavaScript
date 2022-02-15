@@ -16,45 +16,87 @@
  * ※四則演算は"+","-","*","/"を数値ではさんで計算を行います。
  */
 
-let createTimer = function () {
-    let time = 10;
+// let createTimer = function () {
+//     let time = 10;
 
-    return function timeDown() {
-        time -= 1;
-        console.log(time);
+//     return function timeDown() {
+//         time -= 1;
+//         console.log(time);
+//     }
+// }
+
+// let timer = createTimer();
+// timer();
+// timer();
+// timer();
+
+
+// window.onload = function () {
+//     let Hello = function (_name, _major) {
+//         let name = _name;
+//         this.major = _major;
+//         let getName = function () {
+//             return name;
+//         }
+//         this.setName = function (_name) {
+//             name = 'Mr.' + _name;
+//         }
+//         this.getMajor = function () {
+//             return this.major;
+//         }
+//         this.say = function () {
+//             console.log('Hello! ' + getName() + 'I know you are great about ' + this.major + '!');
+//         }
+//     }
+// }
+
+// let ins = new Hello('Jobs', 'Design');
+// ins.say();
+// ins.name = 'Tim';
+// ins.major = 'Computer Science';
+// ins.say();
+// ins.setName('Tim');
+// ins.major = 'Marketing';
+// ins.say();
+
+
+// function calcFactory(val) {
+//     return {
+//         plus: function (target) {
+//             const newVal = val + target;
+//             console.log(val + " + " + target + " = " + newVal);
+//         }
+//     };
+// }
+
+function calcFactory(val) {
+    return {
+        plus: function (target) {
+            const newVal = val + target;
+            console.log(`${val} + ${target} = ${newVal}`);
+            val = newVal;
+        },
+        minus: function (target) {
+            const newVal = val - target;
+            console.log(`${val} - ${target} = ${newVal}`);
+            val = newVal;
+        },
+        multiply: function (target) {
+            const newVal = val * target;
+            console.log(`${val} x ${target} = ${newVal}`);
+            val = newVal;
+        },
+        divide: function (target) {
+            const newVal = val / target;
+            console.log(`${val} / ${target} = ${newVal}`);
+            val = newVal;
+        }
     }
 }
 
-let timer = createTimer();
-timer();
-timer();
-timer();
 
-
-window.onload = function () {
-    let Hello = function (_name, _major) {
-        let name = _name;
-        this.major = _major;
-        let getName = function () {
-            return name;
-        }
-        this.setName = function (_name) {
-            name = 'Mr.' + _name;
-        }
-        this.getMajor = function () {
-            return this.major;
-        }
-        this.say = function () {
-            console.log('Hello! ' + getName() + 'I know you are great about ' + this.major + '!');
-        }
-    }
-}
-
-let ins = new Hello('Jobs', 'Design');
-ins.say();
-ins.name = 'Tim';
-ins.major = 'Computer Science';
-ins.say();
-ins.setName('Tim');
-ins.major = 'Marketing';
-ins.say();
+const calc = calcFactory(10);
+calc.plus(5);
+calc.minus(3);
+calc.multiply(3);
+calc.divide(2);
